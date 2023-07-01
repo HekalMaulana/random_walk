@@ -4,13 +4,22 @@ import random
 my_t = Turtle()
 screen = Screen()
 direction = [0, 90, 180, 270]
-colours = ['red', 'green', 'blue', 'yellow']
+
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+
+    random_color = (r, g, b)
+    return random_color
 
 my_t.pensize(5)
 my_t.speed("fast")
+screen.colormode(255)
 
 for _ in range(200):
-    my_t.color(random.choice(colours))
+    my_t.pencolor(random_color())
+    print(random_color())
     my_t.forward(20)
     my_t.setheading(random.choice(direction))
 
